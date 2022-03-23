@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:id="@+id/bottomSheetContainer"
+    android:orientation="vertical"
+    android:layout_marginBottom="200dp">
+
+    <View
+        android:layout_margin="10dp"
+        android:layout_width="50dp"
+        android:layout_gravity="center"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Canteen Name"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:id="@+id/canteenName"
+        />
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:drawableLeft="@drawable/ic_baseline_phone_android_24"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/canteenPhoneNumber"
+            android:text="@string/loading"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:fontFamily="@font/roboto_condensed"
+            android:textStyle="bold"
+            android:background="@drawable/corner"
+            android:layout_margin="10dp"
+            android:drawablePadding="30dp"
+            android:textColor="#fff"
+            android:textAlignment="viewStart"
+            android:paddingLeft="10dp"/>
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Available Items"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/availableItems"
+        android:text="Loading"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/roboto_condensed"
+        />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/canteenImage"
+        android:src="@drawable/canteencolor"
+        android:scaleType="fitCenter"
+        />
+</LinearLayout>

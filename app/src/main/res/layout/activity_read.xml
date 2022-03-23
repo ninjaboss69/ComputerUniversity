@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Read">
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="50dp"
+       android:text="Not Available"
+       android:maxLines="2"
+       android:textSize="20sp"
+       android:id="@+id/name"
+       android:textColor="@color/lite_blue"
+       android:textAllCaps="true"
+       android:textAlignment="center"
+       android:gravity="center"
+       android:paddingLeft="10dp"
+       android:fontFamily="sans-serif-condensed-medium"
+       android:layout_alignParentLeft="true"/>
+    <ImageButton
+        android:id="@+id/markAsFavorite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_favorite_border_24"
+        android:background="@color/tran"
+        android:layout_alignParentRight="true"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/markAsFavorite"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="15dp"
+                        android:background="#707070"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/authorTextView"
+                        android:text="Upload Time : Not Available"
+                        android:layout_weight="0.5"
+                        android:paddingLeft="15dp"
+                        android:fontFamily="@font/roboto_condensed"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Author : Not Available"
+                        android:paddingLeft="15dp"
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/uploadTimeTextView"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/tran"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_baseline_remove_red_eye_24"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:paddingLeft="15dp"
+                            android:id="@+id/viewCount"
+                            android:textSize="18sp"
+                            android:gravity="center"
+                            android:fontFamily="@font/roboto_condensed"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+</RelativeLayout>

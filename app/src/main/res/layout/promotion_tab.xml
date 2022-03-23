@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="190dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/wholePage"
+    app:strokeColor="@color/black"
+    app:strokeWidth="0.3dp"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+
+       >
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="45dp"
+           android:id="@+id/h"
+           android:textSize="15sp"
+           android:layout_marginLeft="6dp"
+           android:fontFamily="sans-serif-condensed-medium"
+           android:text="Programming Languages"
+           android:textColor="#666"
+           android:maxLines="2"
+           android:textStyle="bold"
+
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:id="@+id/d"
+           android:textSize="12sp"
+           android:layout_marginLeft="6dp"
+           android:fontFamily="sans-serif-condensed-medium"
+           android:text="Software Engineering is something we should learn these days Software Engineering is something we should learn these days"
+           android:textColor="#999"
+           android:lineHeight="22dp"
+           />
+
+   </LinearLayout>
+</RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

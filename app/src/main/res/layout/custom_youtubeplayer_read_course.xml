@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="22dp"
+    android:layout_marginTop="22dp">
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/ytPlayer"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/youtubeplaybutton"
+        android:layout_centerInParent="true"
+        android:background="@color/tran"
+        android:id="@+id/playButton"
+        />
+
+
+
+</RelativeLayout>

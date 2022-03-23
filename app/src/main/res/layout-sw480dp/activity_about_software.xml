@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutSoftware">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout"
+            android:layout_below="@+id/ucsmImageViewCover"
+            >
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/ucsmhighresolution"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+                    android:textSize="33sp"
+                    android:textColor="@color/lite_blue"
+                    android:text="University of Computer Sutdies,Mandalay(UCSM)"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:id="@+id/bugReportLinearLayout"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="30dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="130dp"
+                        android:background="@color/tran"
+                        android:src="@drawable/bug_report_480"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:background="@color/tran"
+                        android:text="@string/report_bug"
+                        android:id="@+id/reportBugButton"
+                        android:textSize="22sp"
+                        />
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:id="@+id/layout1"
+            android:layout_marginLeft="40dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_marginBottom="40dp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:textColor="@color/colorRed_A400"
+                    android:singleLine="true"
+                    android:text="Developer Team"
+                    android:textSize="26sp"
+                    android:paddingLeft="15dp"
+                    android:fontFamily="@font/roboto_condensed"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="developerTeam                               "
+                    android:id="@+id/developerTeam"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="right"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/roboto_condensed"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_marginBottom="40dp"
+                    android:fontFamily="@font/roboto_condensed"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:textColor="@color/colorRed_A400"
+                    android:singleLine="true"
+                    android:text="Version"
+                    android:textSize="26sp"
+                    android:paddingLeft="15dp"
+                    android:layout_width="300dp"
+                    />
+                <TextView
+                    android:fontFamily="@font/roboto_condensed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="version"
+                    android:id="@+id/version"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="right"
+                    android:textSize="22sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_marginBottom="40dp"
+                    android:fontFamily="@font/roboto_condensed"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:textColor="@color/colorRed_A400"
+                    android:singleLine="true"
+                    android:text="Release Date"
+                    android:textSize="26sp"
+                    android:layout_width="300dp"
+                    android:paddingLeft="15dp"
+                   />
+                <TextView
+                    android:layout_weight="0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="releaseDate"
+                    android:textSize="22sp"
+                    android:id="@+id/releaseDate"
+                    android:layout_gravity="right"
+                    android:fontFamily="@font/roboto_condensed"/>
+
+            </LinearLayout>
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:textColor="@color/colorRed_A400"
+                    android:singleLine="true"
+                    android:text="Platform"
+                    android:paddingLeft="15dp"
+                    android:textSize="26sp"
+                    android:fontFamily="@font/roboto_condensed"
+                    android:layout_marginBottom="40dp"
+                    />
+                <TextView
+                    android:layout_weight="0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/platform"
+                    android:text="platform"
+                    android:layout_gravity="right"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/roboto_condensed"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_marginRight="50dp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="Remark"
+                    android:singleLine="true"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/colorRed_A400"
+                    android:textSize="26sp"
+                    android:fontFamily="@font/roboto_condensed"
+                    android:layout_marginBottom="40dp"
+                    />
+                <TextView
+                    android:layout_weight="0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="remark"
+                    android:id="@+id/remark"
+                    android:layout_gravity="right"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/roboto_condensed"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp">
+
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:textColor="@color/colorRed_A400"
+                    android:singleLine="true"
+                    android:text="About"
+                    android:textSize="26sp"
+                    android:fontFamily="@font/roboto_condensed"
+                    />
+
+                <TextView
+                    android:fontFamily="@font/roboto_condensed"
+                    android:layout_weight="0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="about"
+                    android:layout_gravity="right"
+                    android:id="@+id/about"
+                    android:textSize="22sp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ucsmtablet"
+    android:id="@+id/ucsmImageViewCover"
+    android:adjustViewBounds="true"
+    />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

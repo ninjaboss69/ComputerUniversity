@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mainFragment"
+    android:tag="main_fragment"
+     android:layout_marginBottom="50dp"
+   >
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout"
+        >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/toolbar"
+        android:background="@color/veryLightBlueColor"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="15dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="?actionBarSize"
+                android:textAlignment="textStart"
+                android:gravity="center"
+                android:fontFamily="sans-serif"
+                android:textSize="18sp"
+                android:id="@+id/userNameTextView"
+                android:text=""
+                />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+
+                android:id="@+id/ucsmremovebg"
+                android:background="@color/tran"
+                android:src="@drawable/ucsmremovebg">
+
+            </ImageView>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarSize="0dp"
+            android:scrollbars="none"
+
+            >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <GridView
+            android:padding="10dp"
+            android:layout_marginTop="?actionBarSize"
+            android:paddingTop="?actionBarSize"
+            android:id="@+id/grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:numColumns="4"
+            android:layout_marginRight="10dp"
+
+            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#707070"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+            <TextView
+                android:id="@+id/announcementTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Announcement: Thank You For All Helping Testing. Please Suggest some required feature."
+                android:textColor="#9e6900"
+                android:textSize="16sp"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recy"
+                android:layout_marginLeft="18dp"
+             />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="0.2dp"
+                app:strokeColor="@color/view_bar_color"
+                android:id="@+id/onlineCourses"
+                android:layout_margin="18dp"
+                >
+                <LinearLayout
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/courses"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Courses"
+                        />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_marginLeft="18dp"
+    android:layout_marginRight="18dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="5dp"
+    app:strokeColor="@color/view_bar_color"
+    app:strokeWidth="0.5dp"
+    android:layout_marginBottom="50dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+
+    android:layout_centerInParent="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       >
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="General"
+            android:background="@drawable/circle_button"
+            android:id="@+id/supportCardview"
+            android:layout_marginLeft="10dp"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="Lists"
+            android:id="@+id/todo"
+            android:background="@drawable/circle_button"
+            android:layout_marginLeft="20dp"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="Events"
+            android:background="@drawable/circle_button"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/eventCardView"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="Shop"
+            android:id="@+id/shopButton"
+            android:background="@drawable/circle_button"
+            android:layout_marginLeft="20dp"
+            />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="Rate"
+            android:background="@drawable/circle_button"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/rateButton"
+            />
+
+    </LinearLayout>
+</HorizontalScrollView>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+        </ScrollView>
+        </RelativeLayout>
+    </FrameLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/draw_navigation"
+            app:headerLayout="@layout/nav_header"
+            />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+</FrameLayout>

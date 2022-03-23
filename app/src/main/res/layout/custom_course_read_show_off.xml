@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:id="@+id/cardView">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/play_video_24"
+        android:layout_marginLeft="22dp"
+        android:scaleType="fitXY"
+        android:padding="15dp"
+        android:id="@+id/playImageView"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/playImageView"
+        android:layout_marginTop="30dp"
+        android:text="Introduction"
+        android:textSize="21sp"
+        android:paddingLeft="7dp"
+        android:id="@+id/mainTitle"
+        android:fontFamily="@font/roboto_condensed"
+        android:maxLines="1"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/playImageView"
+        android:layout_below="@+id/mainTitle"
+        android:layout_marginTop="18dp"
+        android:text="5min Read"
+        android:textSize="15sp"
+        android:paddingLeft="7dp"
+        android:fontFamily="@font/roboto_condensed"
+        android:id="@+id/readingTime"
+        />
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

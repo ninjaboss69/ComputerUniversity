@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/tran"
+            android:src="@drawable/aggotalgo"
+            android:scaleType="fitCenter"
+            android:id="@+id/serviceImageButton"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@+id/serviceImageButton"
+            android:text="@string/lorem"
+            android:fontFamily="@font/roboto_condensed"
+            android:id="@+id/serviceTextView"
+            />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/serviceImageButton"
+            android:scaleX="0.5"
+            android:numStars="5"
+            android:scaleY="0.5"
+            android:transformPivotX="0dp"
+            android:transformPivotY="25dp"
+            android:rating="5"
+            android:id="@+id/serviceRating"
+            android:progressTint="@color/yellowBackground2"
+            />
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

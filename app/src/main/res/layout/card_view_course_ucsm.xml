@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="22dp"
+    android:layout_marginRight="22dp"
+    android:id="@+id/parentCardView"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="8dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_condensed"
+        android:textSize="19sp"
+        android:text="Learning Management System"
+        android:id="@+id/courseName"
+        android:layout_marginTop="7dp"
+        android:paddingLeft="10dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/courseName"
+        android:layout_marginTop="5dp"
+        app:cardUseCompatPadding="true"
+      android:layout_marginLeft="10dp"
+        android:id="@+id/lol">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/lms"
+            android:scaleType="fitXY"
+            android:id="@+id/courseImage"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*sponsored by ucsm"
+        android:layout_toRightOf="@+id/lol"
+        android:layout_below="@+id/courseName"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/roboto_condensed"
+        android:layout_marginLeft="22dp"
+        android:id="@+id/sponsoredText"/>
+    <ImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_baseline_expand_more_24"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="22dp"
+        android:background="@color/tran"
+        android:layout_marginRight="22dp"
+        android:id="@+id/expandMore"
+        android:layout_marginTop="15dp"/>
+</RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/childLinearLayout"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lorem"
+                android:padding="10dp"
+                android:id="@+id/textViewOfUCSMCourse"
+                android:fontFamily="@font/roboto_condensed"
+                android:lineHeight="22dp"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:id="@+id/goButton"
+                android:layout_gravity="center"
+                android:background="@color/lite_blue"
+                android:text="Go"
+                android:drawableLeft="@drawable/linking"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:paddingLeft="10dp"
+                android:gravity="center"
+                android:drawablePadding="5dp"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Semester Name"
+            android:textAlignment="center"
+            android:textSize="26sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:id="@+id/name"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:fontFamily="sans-serif-condensed"
+                android:id="@+id/subject1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:editable="false"
+                android:focusable="false"
+                android:clickable="false"
+                android:hint="Subject 1"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:cursorVisible="false"
+                android:textSize="22sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:fontFamily="sans-serif-condensed"
+                android:id="@+id/subject2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:editable="false"
+                android:focusable="false"
+                android:clickable="false"
+                android:hint="Subject 2"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:cursorVisible="false"
+                android:textSize="22sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:fontFamily="sans-serif-condensed"
+                android:id="@+id/subject3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:editable="false"
+                android:focusable="false"
+                android:textSize="22sp"
+                android:clickable="false"
+                android:hint="Subject 3"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:cursorVisible="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:fontFamily="sans-serif-condensed"
+                android:id="@+id/subject4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:editable="false"
+                android:focusable="false"
+                android:clickable="false"
+                android:hint="Subject 4"
+                android:textSize="22sp"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:cursorVisible="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <EditText
+                android:fontFamily="sans-serif-condensed"
+                android:id="@+id/subject5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:editable="false"
+                android:focusable="false"
+                android:clickable="false"
+                android:hint="Subject 5"
+                android:textSize="22sp"
+                android:background="@android:color/transparent"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:cursorVisible="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>  <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/subject6"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:editable="false"
+            android:focusable="false"
+            android:clickable="false"
+            android:hint="Subject 6"
+            android:textSize="22sp"
+            android:background="@android:color/transparent"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:cursorVisible="false"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

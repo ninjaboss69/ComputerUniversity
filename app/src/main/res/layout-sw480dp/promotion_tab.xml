@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="240dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/wholePage"
+    android:elevation="5dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/h"
+                android:textSize="24sp"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Software Engineering"
+                android:textColor="#666"
+                android:maxLines="1"
+                />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/d"
+                android:textSize="23sp"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Software Engineering is something we should learn these days Software Engineering is something we should learn these days"
+                android:textColor="#999"
+                android:lineHeight="22dp"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

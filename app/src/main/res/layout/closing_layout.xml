@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_register_hero"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/login_to_access_data"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_light"
+        android:textSize="22sp"
+        android:textColor="#1e616f"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Login"
+            android:textColor="#fff"
+            android:background="@drawable/corner"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:id="@+id/loginTextView"
+            android:backgroundTint="#216c7b"
+            />
+        <Button
+            android:textColor="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#216c7b"
+            android:layout_margin="20dp"
+            android:text="@string/go_back"
+            android:id="@+id/goBackButton"
+            android:background="@drawable/corner"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="20dp"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true"
+   >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category Name"
+
+            android:maxLines="1"
+            android:fontFamily="@font/roboto_condensed"
+            android:textColor="@color/specialColor"
+            android:textSize="16sp"
+            android:id="@+id/categoryName"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="100dp"
+            />
+        <TextView
+            android:id="@+id/ViewAll"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="15sp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/my_text"
+            android:layout_alignParentRight="true"
+            />
+  <androidx.recyclerview.widget.RecyclerView
+
+      android:layout_marginTop="15dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/categoryName"
+      android:id="@+id/subRecyclerView"/>
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

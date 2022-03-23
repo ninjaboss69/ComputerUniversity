@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#deeb34</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#2186c4</color>
+    <color name="colorPrimaryDark">#deeb34</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="textColor">#95a832</color>
+    <color name="iconBackgroundColor">#abb7ba</color>
+    <color name="colorSaiNote">#3295a8</color>
+    <color name="yellowBackground">#f0e407</color>
+    <color name="yellowBackground1">#a69e0d</color>
+    <color name="yellowBackground2">#ded52c</color>
+    <color name="nearWhite">#fafaf7</color>
+    <color name="tran">#00000000</color>
+    <color name="oldPaper">#f2eecb</color>
+    <color name="oldPaper1">#dbdad5</color>
+    <color name="oldPaper2">#bfbcae</color>
+    <color name="lightGreenColor">#42f5a4</color>
+    <color name="lightYellowColor">#f2f542</color>
+    <color name="lightBlueColor">#42f5d4</color>
+    <color name="veryLightBlueColor">#42d7f5</color>
+    <color name="ucsmcolor">#faf205</color>
+    <color name="ucsmmatchcolor">#05fa42</color>
+    <color name="themeColor">#11CFC5</color>
+    <color name="darkTextColor">#020000</color>
+    <color name="contentTextColor">#020000</color>
+    <color name="register_bk_color">#11CFC5</color>
+    <color name="lgray">#c5d4cb</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="specialColor">#4281f5</color>
+    <color name="primaryTextColor">#11CFC5</color>
+    <color name="view_bar_color">#d4d4d4</color>
+<color name="text_color_read">#3b3d3b</color>
+    <!-- 1st Gradient color -->
+    <color name="colorPurple_A400">#D500F9</color>
+    <color name="colorPurple_900">#4A148C</color>
+    <!-- ./ 1st Gradient color -->
+
+    <!-- 2nd Gradient color -->
+    <color name="colorAmber_A400">#FFC400</color>
+    <color name="colorAmber_900">#FF6F00</color>
+    <!-- ./ 2nd Gradient color -->
+
+    <!-- 3rd Gradient color -->
+    <color name="colorGreen_A400">#00E676</color>
+    <color name="colorGreen_900">#1B5E20</color>
+    <!-- ./ 3rd Gradient color -->
+
+    <!-- 4th Gradient color -->
+    <color name="colorRed_A400">#FF1744</color>
+    <color name="colorRed_900">#B71C1C</color>
+    <!-- ./ 4th Gradient color -->
+
+    <color name="card_shadow">#8000</color>
+    <color name="card_background_default">#F6F6F6</color>
+    <color name="card_background_selected">#CCC</color>
+</resources>

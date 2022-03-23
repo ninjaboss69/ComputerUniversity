@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/image_view"
+        />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="93dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ellipsize="none"
+        android:text="Academic Calendar"
+        android:maxLines="2"
+        android:fontFamily="@font/roboto_condensed"
+        android:textAlignment="center"
+        android:textSize="12.5sp"
+        android:autoSizeTextType="uniform"/>
+</LinearLayout>

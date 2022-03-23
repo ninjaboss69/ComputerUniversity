@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainBackground"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:hint="what would you like to do?"
+            android:id="@+id/editTextTodo"
+            android:background="@drawable/edittextbackground1"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="70dp">
+            <ImageView
+                android:id="@+id/imageSend"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_baseline_send_24"
+                android:layout_centerHorizontal="true"
+                android:foregroundGravity="center"
+                android:layout_marginTop="15dp"
+               />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/helpLinear"
+            android:orientation="horizontal"
+            android:layout_toLeftOf="@+id/imageSend"
+>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/calendarImage"
+                android:src="@drawable/calendar"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/searchedittext"
+                android:id="@+id/time"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/timePicker"
+                android:src="@drawable/ic_baseline_timer_24"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/searchedittext"
+                android:id="@+id/timeForClock"
+                android:layout_marginTop="15dp"
+               android:gravity="center"
+                />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/colorPicker"
+                android:src="@drawable/colorpicker"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                />
+
+        </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:id="@+id/bottomSheetContainer"
+    android:orientation="vertical"
+    android:layout_marginBottom="200dp">
+
+    <View
+        android:layout_margin="10dp"
+        android:layout_width="50dp"
+        android:layout_gravity="center"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Club Name"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:id="@+id/clubName"
+        />
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/clubPhoneNumber"
+            android:text="Loading"
+            android:inputType="phone"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif"
+            android:background="@color/lite_blue"
+            android:layout_margin="10dp"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clubEmail"
+        android:text="Loading"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-condensed"
+        />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clubFees"
+        android:text="Loading"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+</LinearLayout>

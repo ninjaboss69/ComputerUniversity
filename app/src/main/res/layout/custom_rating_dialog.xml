@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="300dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating Course"
+            android:textSize="22sp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_condensed"
+            android:layout_marginLeft="22dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/title"
+           />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="22dp"
+            android:text="@string/rating_warm_text"
+            android:layout_margin="16dp"
+            android:id="@+id/g"/>
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/g"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/ratingBar"
+            android:layout_marginTop="22dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate Now"
+            android:backgroundTint="@color/lite_blue"
+            android:background="@drawable/corner"
+            android:layout_below="@+id/ratingBar"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/rateButton"
+            />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

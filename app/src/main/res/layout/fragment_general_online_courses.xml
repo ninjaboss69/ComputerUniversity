@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".generalOnlineCourses"
+   >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/allCoursesRelativeLayout">
+
+
+
+    <LinearLayout
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:id="@+id/firstTitleLinearLayout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="CS Courses"
+            android:layout_weight=".7"
+            android:singleLine="true"
+            android:paddingLeft="22dp"
+            android:fontFamily="@font/roboto_condensed"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="See All"
+            android:fontFamily="@font/roboto_condensed"
+            android:textStyle="bold"
+            android:layout_gravity="end"
+            android:layout_weight=".3"
+            android:gravity="center"
+            android:id="@+id/viewAllCSCourse"
+            />
+
+    </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/firstTitleLinearLayout"
+            android:layout_marginTop="10dp"
+            android:id="@+id/coursesRecyclerView"
+            android:paddingLeft="28dp"
+            android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:id="@+id/ongoingCoursesRelativeLayout"
+                android:layout_below="@+id/allCoursesRelativeLayout"
+                android:layout_marginBottom="33dp"
+                >
+                <LinearLayout
+                    android:layout_marginTop="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:id="@+id/onGoingCourseTittle">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:text="Ongoing Courses"
+                        android:layout_weight=".7"
+                        android:singleLine="true"
+                        android:paddingLeft="22dp"
+                        android:fontFamily="@font/roboto_condensed"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="See All"
+                        android:fontFamily="@font/roboto_condensed"
+                        android:textStyle="bold"
+                        android:layout_gravity="end"
+                        android:layout_weight=".3"
+                        android:gravity="center"
+                        android:id="@+id/viewAllOngoingCourse"
+                        />
+
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:paddingLeft="28dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/onGoingCourseTittle"
+                    android:id="@+id/ongoingCoursesRecylerView"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+    </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewingDetailsOfACourse"
+
+  >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/upperCourseData"
+        >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/helperLayout"
+    android:weightSum="1">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainTitle"
+        android:text="Algorithm and Data Structure Algorithm and Data Structure"
+        android:fontFamily="@font/roboto_condensed"
+        android:textSize="22sp"
+        android:paddingLeft="22dp"
+        android:layout_marginTop="33dp"
+        android:layout_weight="0.7"
+        />
+    <ImageView
+        android:layout_weight="0.3"
+        android:id="@+id/options"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/verticlmenu" />
+</LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subTitle"
+        android:text="Learn in java programming"
+        android:fontFamily="@font/roboto_condensed"
+        android:textSize="16sp"
+        android:paddingLeft="22dp"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/helperLayout"
+        />
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subTitle"
+            android:max="100"
+            android:id="@+id/progress_bar"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="16dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+        <Button
+            android:id="@+id/enrollButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/lite_blue"
+            android:layout_below="@+id/subTitle"
+            android:layout_margin="22dp"
+            android:text="Enroll Now"
+            android:background="@drawable/corner_15"
+            android:textColor="@color/white"
+            />
+
+    </RelativeLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/upperCourseData"
+        android:id="@+id/tab_layout"
+        app:tabIndicatorColor="@color/yellowBackground2"
+/>
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_below="@+id/tab_layout"
+        android:layout_height="800dp"
+        android:id="@+id/viewpager"
+        />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

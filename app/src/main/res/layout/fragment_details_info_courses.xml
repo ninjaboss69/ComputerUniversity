@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DetailsInfoCourses">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="80dp"
+           android:id="@+id/instructorCardView"
+           android:elevation="0dp"
+           >
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal"
+               android:paddingTop="10dp">
+               <androidx.cardview.widget.CardView
+                   android:layout_gravity="center_horizontal"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:elevation="22dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginLeft="20dp"
+                   >
+                   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:src="@drawable/studentcolor"
+                       android:id="@+id/instructorImageView"
+                       />
+               </androidx.cardview.widget.CardView>
+               <TextView
+                   android:layout_marginTop="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:singleLine="true"
+                   android:paddingLeft="22dp"
+                   android:text="DR.Swe Swe Win"
+                   android:fontFamily="sans-serif-condensed-medium"
+                   android:textSize="22sp"
+                   android:id="@+id/instructorName"/>
+           </LinearLayout>
+
+
+       </androidx.cardview.widget.CardView>
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_marginTop="15dp"
+           android:layout_below="@id/instructorCardView"
+           >
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+                android:orientation="vertical"
+               >
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/startDateTitle"
+                   android:text="Start Date : 1/2/22"
+                   android:fontFamily="@font/roboto_condensed"
+                   android:textSize="16sp"
+                   android:paddingLeft="22dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_below="@+id/subTitle"
+
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_below="@+id/startDateTitle"
+                   android:layout_marginLeft="22dp"
+                   android:layout_marginTop="16dp"
+                   android:id="@+id/extraDataLinearLayout">
+                   <ImageView
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:src="@drawable/ic_baseline_star_rate_24"
+                       android:background="@color/tran"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="4.8"
+
+                       android:id="@+id/ratingTextView"
+                       android:textSize="16sp"
+                       android:paddingLeft="15dp"
+                       android:layout_gravity="center"/>
+                   <ImageView
+                       android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:src="@drawable/ic_baseline_people_24"
+                       android:background="@color/tran"
+                       android:layout_marginLeft="22dp"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="1234"
+                       android:textSize="16sp"
+                       android:paddingLeft="15dp"
+                       android:id="@+id/totalAttendantTextView"
+                       android:layout_gravity="center"/>
+
+               </LinearLayout>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:fontFamily="@font/roboto_condensed"
+                   android:autoLink="web"
+                   android:layout_marginLeft="22dp"
+                   android:layout_marginRight="22dp"
+                   android:text="Lorem Ipusm"
+                   android:id="@+id/courseLongDescriptionTextView"
+                   android:layout_marginTop="22dp"
+                   />
+           </LinearLayout>
+       </androidx.cardview.widget.CardView>
+
+   </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

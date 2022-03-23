@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Result"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="3dp"
+                android:backgroundTint="@color/veryLightBlueColor">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="UCSM"
+                        android:textColor="@color/lite_blue"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:textSize="34sp"
+                        android:paddingBottom="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="MKPT"
+                        android:textColor="@color/colorRed_A400"
+                        android:textSize="27sp"
+                        android:paddingLeft="20dp"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/edittextbackground1"
+                        android:hint="Enter Your MKPT"
+                        android:paddingLeft="20dp"
+                        android:textSize="27sp"
+                        android:layout_margin="18dp"
+                        android:id="@+id/inputMkpt"
+                        />
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:text="Go"
+                        android:textSize="29sp"
+                        android:layout_gravity="center_horizontal"
+                        android:backgroundTintMode="multiply"
+                        android:backgroundTint="@color/colorAccent"
+                        android:background="@drawable/searchedittext"
+                        android:id="@+id/goButton"
+
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerView"
+                android:padding="30dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

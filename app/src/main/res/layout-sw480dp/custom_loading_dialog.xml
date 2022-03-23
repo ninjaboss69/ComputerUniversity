@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:padding="30dp"
+        >
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+
+            >
+            <ProgressBar
+                android:paddingTop="30dp"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/progress_bar"
+                android:indeterminateTint="@color/veryLightBlueColor"
+                android:layout_gravity="center_horizontal"
+
+                />
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/operation_in_progress"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:id="@+id/textViewForLoadingDialog"
+                android:layout_gravity="center_horizontal"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

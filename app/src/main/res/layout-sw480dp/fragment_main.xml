@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mainFragment"
+    android:tag="main_fragment"
+    android:layout_marginBottom="50dp"
+    android:nestedScrollingEnabled="false"
+    >
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout"
+        tools:openDrawer="start"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/toolbar"
+                android:background="@color/register_bk_color"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:elevation="22dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:textAlignment="textStart"
+                        android:gravity="center"
+                        android:fontFamily="sans-serif"
+                        android:textSize="26sp"
+                        android:id="@+id/userNameTextView"
+                        android:text="Hello Sai La Min Oak"
+                        />
+                    <com.pkmmte.view.CircularImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentRight="true"
+                        app:border="true"
+                        app:border_color="#EEEEEE"
+                        android:id="@+id/imageOFucsm"
+                        app:shadow="true"
+                        android:background="@color/tran"
+                        android:src="@drawable/ucsmquitesmall">
+
+                    </com.pkmmte.view.CircularImageView>
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <GridView
+                            android:padding="10dp"
+                            android:layout_marginTop="120dp"
+                            android:paddingTop="?actionBarSize"
+                            android:id="@+id/grid_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="320dp"
+                            android:layout_gravity="center"
+                            android:numColumns="4"
+                            android:layout_marginRight="10dp"
+
+                            />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/recy"
+                            android:layout_margin="30dp"/>
+
+                        <TextView
+                            android:id="@+id/announcementTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="30dp"
+                            android:text="Announcement: Software Engineering is a stupid stupid stupidAnnouncement: Software Engineering is a stupid stupid stupidAnnouncement: Software Engineering is a stupid stupid stupidAnnouncement: Software Engineering is a stupid stupid stupid"
+                            android:textColor="#9e6900"
+                            android:textSize="26sp"
+                            android:ellipsize="marquee"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:singleLine="true"
+                            />
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:rowCount="4"
+                            android:columnCount="1"
+                            android:padding="30dp"
+                            >
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                android:layout_gravity="fill"
+                                android:layout_columnWeight="1"
+                                android:layout_rowWeight="1"
+                                android:layout_row="2"
+                                android:layout_column="0"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="10dp"
+                                app:cardUseCompatPadding="true"
+                                android:id="@+id/todo"
+                                >
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_gravity="center_horizontal|center_vertical"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <ImageView
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:src="@drawable/lists"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:text="Lists"
+                                        android:textSize="25sp"
+                                        />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                android:layout_gravity="fill"
+                                android:layout_columnWeight="1"
+                                android:layout_rowWeight="1"
+                                android:layout_row="3"
+                                android:layout_column="0"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="5dp"
+                                app:cardUseCompatPadding="true"
+                                android:id="@+id/eventCardView"
+
+                                >
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_gravity="center_horizontal|center_vertical"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <ImageView
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:src="@drawable/eventss"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:text="Events"
+                                        android:textSize="25sp"
+                                        />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                android:layout_gravity="fill"
+                                android:layout_columnWeight="1"
+                                android:layout_rowWeight="1"
+                                android:layout_row="1"
+                                android:layout_column="0"
+                                app:cardCornerRadius="8dp"
+                                app:cardUseCompatPadding="true"
+                                app:cardElevation="5dp"
+                                android:id="@+id/supportCardview"
+                                >
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_gravity="center_horizontal|center_vertical"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <ImageView
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:src="@drawable/general"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:text="General"
+                                        android:textSize="25sp"
+                                        />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                android:layout_gravity="fill"
+                                android:layout_columnWeight="1"
+                                android:layout_rowWeight="1"
+                                android:layout_row="0"
+                                android:layout_column="0"
+                                app:cardCornerRadius="8dp"
+                                app:cardUseCompatPadding="true"
+                                app:cardElevation="5dp"
+                                android:id="@+id/onlineCourses"
+                                >
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_gravity="center_horizontal|center_vertical"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <ImageView
+                                        android:layout_width="100dp"
+                                        android:layout_height="100dp"
+                                        android:src="@drawable/courses"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:text="Courses"
+                                        android:textSize="25sp"
+                                        android:fontFamily="@font/roboto_condensed"
+                                        />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                        </GridLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </FrameLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:itemIconSize="100dp"
+            app:itemTextColor="@color/register_bk_color"
+            app:itemTextAppearance="@style/navigationDrawerStyle480"
+            app:menu="@menu/draw_navigation"
+            app:headerLayout="@layout/nav_header"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+</FrameLayout>

@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WeekViewActivity"
+
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="5dp"
+                    >
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_baseline_arrow_back_24"
+                        android:onClick="previousWeekAction"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="7dp"
+                        />
+                    <TextView
+                        android:id="@+id/monthYearTV"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:text="Feb 2021"
+                        android:textSize="32sp"
+
+                        android:textAlignment="center"
+                        android:textColor="@color/black"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="SUN"
+
+                        android:textAlignment="center"
+                        android:textSize="26sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="MON"
+
+                        android:textAlignment="center"
+                        android:textSize="26sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TUE"
+
+                        android:textAlignment="center"
+                        android:textSize="26sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="WED"
+
+                        android:textAlignment="center"
+                        android:textSize="26sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="THUR"
+
+                        android:textAlignment="center"
+                        android:textSize="26sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="FRI"
+                        android:textAlignment="center"
+                        android:textSize="26sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="SAT"
+                        android:textAlignment="center"
+                        android:textSize="26sp"/>
+
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/calendarRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="175dp"
+                    />
+
+                <TextView
+                    android:id="@+id/scheduleTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Today Schedule"
+                    android:textSize="32sp" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="7dp"
+                    android:padding="12dp"
+                    >
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:columnCount="1"
+                        android:rowCount="7"
+                        >
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/imageViewForDone1"
+                                            android:layout_width="50dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/tran"
+                                            android:src="@drawable/panding" />
+                                        <View
+                                            android:layout_width="2dp"
+                                            android:layout_gravity="center"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            >
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:singleLine="true"
+                                                android:fontFamily="sans-serif-condensed-medium"
+                                                android:text="Software Engineering "
+                                                android:textSize="28sp"
+                                                android:paddingLeft="10dp"
+                                                android:id="@+id/subject1"
+                                                android:layout_weight="1"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="9:00-10:00 AM"
+                                                android:textSize="20sp"
+                                                android:fontFamily="@font/roboto_condensed"
+
+
+                                                />
+
+
+
+                                        </LinearLayout>
+                                        <TextView
+                                            android:layout_marginTop="22dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:fontFamily="sans-serif"
+                                            android:text="..."
+                                            android:paddingLeft="10dp"
+                                            android:textSize="22sp"
+                                            android:layout_weight="1"/>
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/imageViewForDone2"
+                                            android:layout_width="50dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/tran"
+                                            android:src="@drawable/panding" />
+                                        <View
+                                            android:layout_width="2dp"
+                                            android:layout_gravity="center"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            >
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:singleLine="true"
+                                                android:fontFamily="sans-serif-condensed-medium"
+                                                android:text="Software Engineering "
+                                                android:textSize="28sp"
+                                                android:paddingLeft="10dp"
+                                                android:id="@+id/subject2"
+                                                android:layout_weight="1"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="9:00-10:00 AM"
+                                                android:textSize="20sp"
+                                                android:fontFamily="@font/roboto_condensed"
+
+
+                                                />
+
+
+
+                                        </LinearLayout>
+                                        <TextView
+                                            android:layout_marginTop="22dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:fontFamily="sans-serif"
+                                            android:text="..."
+                                            android:paddingLeft="10dp"
+                                            android:textSize="22sp"
+                                            android:layout_weight="1"/>
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_row="2"
+                            android:layout_column="0"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/imageViewForDone3"
+                                            android:layout_width="50dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/tran"
+                                            android:src="@drawable/panding" />
+                                        <View
+                                            android:layout_width="2dp"
+                                            android:layout_gravity="center"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            >
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:singleLine="true"
+                                                android:fontFamily="sans-serif-condensed-medium"
+                                                android:text="Software Engineering "
+                                                android:textSize="28sp"
+                                                android:paddingLeft="10dp"
+                                                android:id="@+id/subject3"
+                                                android:layout_weight="1"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="9:00-10:00 AM"
+                                                android:textSize="20sp"
+                                                android:fontFamily="@font/roboto_condensed"
+
+
+                                                />
+
+
+
+                                        </LinearLayout>
+                                        <TextView
+                                            android:layout_marginTop="22dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:fontFamily="sans-serif"
+                                            android:text="..."
+                                            android:paddingLeft="10dp"
+                                            android:textSize="22sp"
+                                            android:layout_weight="1"/>
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_row="3"
+                            android:layout_column="0"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/imageViewForDone4"
+                                            android:layout_width="50dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/tran"
+                                            android:src="@drawable/panding" />
+                                        <View
+                                            android:layout_width="2dp"
+                                            android:layout_gravity="center"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            >
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:singleLine="true"
+                                                android:fontFamily="sans-serif-condensed-medium"
+                                                android:text="Software Engineering "
+                                                android:textSize="28sp"
+                                                android:paddingLeft="10dp"
+                                                android:id="@+id/subject4"
+                                                android:layout_weight="1"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="9:00-10:00 AM"
+                                                android:textSize="20sp"
+                                                android:fontFamily="@font/roboto_condensed"
+
+
+                                                />
+
+
+
+                                        </LinearLayout>
+                                        <TextView
+                                            android:layout_marginTop="22dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:fontFamily="sans-serif"
+                                            android:text="..."
+                                            android:paddingLeft="10dp"
+                                            android:textSize="22sp"
+                                            android:layout_weight="1"/>
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_row="4"
+                            android:layout_column="0"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <ImageButton
+                                            android:id="@+id/imageViewForDone5"
+                                            android:layout_width="50dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/tran"
+                                            android:src="@drawable/panding" />
+                                        <View
+                                            android:layout_width="2dp"
+                                            android:layout_gravity="center"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/black"/>
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            >
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:singleLine="true"
+                                                android:fontFamily="sans-serif-condensed-medium"
+                                                android:text="Software Engineering "
+                                                android:textSize="28sp"
+                                                android:paddingLeft="10dp"
+                                                android:id="@+id/subject5"
+                                                android:layout_weight="1"/>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="9:00-10:00 AM"
+                                                android:textSize="20sp"
+                                                android:fontFamily="@font/roboto_condensed"
+
+
+                                                />
+
+
+
+                                        </LinearLayout>
+                                        <TextView
+                                            android:layout_marginTop="22dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:fontFamily="sans-serif"
+                                            android:text="..."
+                                            android:paddingLeft="10dp"
+                                            android:textSize="22sp"
+                                            android:layout_weight="1"/>
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_row="5"
+                            android:layout_column="0"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <ImageButton
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:id="@+id/imageViewForDone6"
+                                            android:src="@drawable/panding"
+                                            android:background="@color/tran"
+                                            />
+
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            >
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:singleLine="true"
+                                                android:fontFamily="sans-serif-condensed-medium"
+                                                android:text="Software Engineering "
+                                                android:textSize="28sp"
+                                                android:id="@+id/subject6"
+                                                android:paddingLeft="10dp"
+                                                android:layout_weight="1"/>
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="21dp"
+                                                android:text="3:00-4:00 PM"
+                                                android:textSize="20sp"
+
+
+                                                />
+
+
+
+                                        </LinearLayout>
+                                        <TextView
+                                            android:layout_marginTop="10dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:singleLine="true"
+                                            android:fontFamily="sans-serif"
+                                            android:text="...."
+                                            android:textSize="22sp"
+                                            android:paddingLeft="10dp"
+                                            android:layout_weight="1"/>
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </GridLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ucsmbackground"
+    android:scaleType="fitXY"
+    android:adjustViewBounds="true"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

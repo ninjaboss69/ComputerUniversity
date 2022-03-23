@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/corner_15"
+    android:id="@+id/mainCardView"
+    app:cardUseCompatPadding="true"
+    android:layout_marginRight="15dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_weight="1.5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/mainRelativeLayout"
+            >
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="Algorithm and Data Structure"
+                android:fontFamily="@font/roboto_condensed"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:id="@+id/mainTitle"
+                />
+
+            <TextView
+                android:id="@+id/subTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mainTitle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/roboto_condensed"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+
+                android:text="Describe in java"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="by author"
+                android:fontFamily="@font/roboto_condensed"
+                android:layout_marginLeft="10dp"
+                android:textSize="12sp"
+                android:layout_below="@+id/subTitle"
+                android:id="@+id/authorName"
+                />
+            <LinearLayout
+                android:id="@+id/extraDataCardViewOnlineCourses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/tran"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/authorName"
+                android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_baseline_people_24"
+                        android:background="@color/tran"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12221"
+                        android:paddingLeft="2dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/studentAttendant"
+                        android:gravity="center"/>
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:paddingLeft="5dp"
+                        android:src="@drawable/ic_baseline_star_rate_24"
+                        android:background="@color/tran"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.8"
+                        android:id="@+id/courseRating"
+                        android:paddingLeft="2dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:paddingLeft="10dp"
+                        android:src="@drawable/ic_baseline_auto_stories_24"
+                        android:background="@color/tran"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18hour"
+                        android:paddingLeft="5dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/approximateTime"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressbarOnlineCourses"
+                android:visibility="invisible"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/authorName"
+                android:layout_marginTop="19dp"
+                >
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/onGoingProgress"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:max="100"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.5"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="8dp"
+            app:cardUseCompatPadding="true"
+            android:elevation="15dp">
+            <ImageView
+                android:id="@+id/imageViewForShowOffCourseCardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ucsmbackground"
+                android:scaleType="fitXY"
+                />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
