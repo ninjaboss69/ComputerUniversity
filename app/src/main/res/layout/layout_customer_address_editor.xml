@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheetContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin"
+
+        >
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            style="@style/modifiedEditText"
+            android:drawableLeft="@drawable/ic_noun_address_2048875"
+            android:hint="@string/your_address_within_ucsm_arena"
+            android:inputType="textPostalAddress"
+            android:maxLines="1">
+
+        </EditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            style="@style/modifiedEditText"
+            android:drawableLeft="@drawable/ic_baseline_phone_android_24"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:maxLines="1">
+
+        </EditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/saveButton"
+        style="@style/saveButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/loginViewsMargin"
+        android:background="@drawable/button_background_blue"
+        android:backgroundTint="@color/specialColor"
+        android:text="Save"
+        app:initialCornerAngle="27dp"
+        app:spinning_bar_color="#546"
+        app:spinning_bar_padding="6dp"
+        app:spinning_bar_width="4dp" />
+</LinearLayout>

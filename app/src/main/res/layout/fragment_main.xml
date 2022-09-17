@@ -46,7 +46,6 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
 
-                android:id="@+id/ucsmremovebg"
                 android:background="@color/tran"
                 android:src="@drawable/ucsmremovebg">
 
@@ -161,7 +160,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:scrollbars="none"
-
     android:layout_centerInParent="true">
 
     <LinearLayout
@@ -204,7 +202,7 @@
         <Button
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:text="Rate"
+            android:text="Push_N"
             android:background="@drawable/circle_button"
             android:layout_marginLeft="20dp"
             android:id="@+id/rateButton"

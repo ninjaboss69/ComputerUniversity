@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UCSMShop"
+    android:id="@+id/shop_drawer_layout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:id="@+id/shop_toolbar"
+                android:background="@color/veryLightBlueColor"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:elevation="15dp"
+                >
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="horizontal"
+                   android:gravity="center">
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:src="@drawable/ic_baseline_menu_24"
+                       android:id="@+id/menuList"/>
+                   <ImageButton
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/toolbar_add_to_cart"
+                       android:background="@color/tran"
+                       android:layout_marginLeft="22dp"
+                       android:visibility="gone"
+                       android:src="@drawable/ic_baseline_shopping_cart_24"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="101"
+                       android:visibility="gone"
+                       android:textColor="@color/black"
+                       android:layout_marginBottom="12dp"
+                       android:textSize="10sp"
+                       android:id="@+id/itemCountInCart"/>
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:text="UCSM Shop"
+                       android:gravity="center"
+                       android:textSize="16sp"
+                       android:textStyle="bold"
+                       android:fontFamily="@font/custom_fonts"
+                       android:textColor="#4F4F4F"
+                       />
+               </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop_toolbar"
+
+                android:id="@+id/categoryRecyclerView"/>
+        </RelativeLayout>
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:menu="@menu/shop_menu"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            android:id="@+id/shop_navigation_view"
+            app:headerLayout="@layout/nav_header"/>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

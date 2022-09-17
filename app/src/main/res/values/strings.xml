@@ -1,11 +1,8 @@
 <resources>
     <string name="app_name">UCSM</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open_navigation">open</string>
     <string name="close_navigation">close</string>
-    <string name="forward"><![CDATA[-->]]></string>
-    <string name="back"><![CDATA[<--]]></string>
     <string name="my_text"> <u>View All</u></string>
     <string name="no_data_available">No Data Available</string>
     <string name="loading">Loading</string>
@@ -13,15 +10,20 @@
     <string name="login_to_access_data">Login To Access Data</string>
     <string name="operation_in_progress">Operation in Progress</string>
     <string name="report_bug">Report Bug</string>
-    <string name="ucsm">UCSM</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="bugFixText">Major Bug Fix in Alarm Service and Notification.....</string>
-    <string name="software_engineering">Software Engineering</string>
-    <string name="available_courses">Available Courses</string>
-    <string name="view_all">View All</string>
+    <string name="shop_open">Open</string>
+    <string name="shop_close">Close</string>
     <string name="rating_warm_text">Rating courses help improve the courses, the instructor\'s quality. Please make sure you gave rating without any biased. User\'s rating are anonymous.</string>
     <string name="lorem">
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla ornare massa in aliquet. Ut sed nisl non odio viverra vehicula. Nunc a aliquet libero. Cras odio magna, feugiat non elementum sit amet, blandit quis risus. Quisque pharetra, tellus in ornare sodales, turpis neque iaculis lorem, at luctus ipsum elit a nunc. Cras laoreet ante risus, a ornare orci varius ac. Quisque a pellentesque libero. Duis dolor enim, bibendum eget cursus at, rhoncus a massa. Aliquam enim sapien, tincidunt sit amet faucibus at, tincidunt at leo. Proin nec erat eu nisi semper varius. Donec eget orci fermentum, rutrum diam non, sodales velit. Pellentesque vitae mi sem. Sed placerat ut mauris vitae eleifend. Nulla laoreet justo pharetra ex tempor ultrices. Donec in mi pellentesque, ultricies ligula in, porta ex. Fusce arcu dui, varius eget pharetra vel, commodo vitae arcu.
 
     Etiam sed eleifend arcu, id dapibus massa. Nunc ac interdum urna. Morbi vulputate sem eget interdum fringilla. Praesent fringilla molestie tincidunt. Ut rhoncus aliquam consectetur. Aliquam ut fermentum urna, sit amet egestas sapien. Curabitur mattis lacus non nunc posuere rutrum. Vestibulum mattis turpis mi, ut finibus </string>
+    <string name="call_now">Call Now</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pending_order">Pending Order</string>
+    <string name="your_address_within_ucsm_arena">Your Address (Within UCSM Arena)</string>
+    <string name="phone_number">Phone Number</string>
 </resources>

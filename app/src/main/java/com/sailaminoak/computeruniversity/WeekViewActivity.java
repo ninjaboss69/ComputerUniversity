@@ -112,7 +112,7 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     {
         CalendarUtils.selectedDate = date;
         setWeekView();
-        getDayTimetable(className,String.valueOf(date.getDayOfWeek()),String.valueOf(date)+" Timetable");
+        getDayTimetable(className,String.valueOf(date.getDayOfWeek()), date +" Timetable");
     }
 
 private void displayToast(String msg){

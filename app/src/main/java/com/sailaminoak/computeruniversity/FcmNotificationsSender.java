@@ -48,10 +48,10 @@ public class FcmNotificationsSender {
             notiObject.put("title", title);
             notiObject.put("body", body);
             notiObject.put("icon", "icon");
-            notiObject.put("description","hello please work");
+            notiObject.put("description","This will be description text!!!");
             mainObj.put("notification", notiObject);
             JSONObject a=new JSONObject();
-            a.put("text",body);
+            a.put("text",body+" 4SE");
             mainObj.put("data",a);
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, postUrl, mainObj, new Response.Listener<JSONObject>() {
                 @Override

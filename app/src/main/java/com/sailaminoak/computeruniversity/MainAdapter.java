@@ -15,10 +15,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainAdapter extends BaseAdapter {
-private Context context;
+private final Context context;
 private LayoutInflater layoutInflater;
-private String[] gridviewdata;
-private int[] images;
+private final String[] gridviewdata;
+private final int[] images;
 public MainAdapter(Context context, String[] gridviewdata, int[] images){
     this.context=context;
     this.gridviewdata=gridviewdata;

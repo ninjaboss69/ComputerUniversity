@@ -7,7 +7,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ public class AcademicCalendar extends AppCompatActivity {
 CalendarView calendarView;
 int monthWatcher =0;
 int yearWatch=2021;
+Button button;
 SharedPreferences sharedPreferences;
 ListView listViewCalendar;
     List<EventDay> events=new ArrayList<>();
@@ -72,6 +75,12 @@ ListView listViewCalendar;
                     callAfterMonthChange();
                 }
             });
+//            button.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                }
+//            });
 
         }
     }

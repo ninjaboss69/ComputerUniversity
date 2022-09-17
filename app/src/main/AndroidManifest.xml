@@ -4,7 +4,6 @@
     package="com.sailaminoak.computeruniversity">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -15,7 +14,12 @@
         android:roundIcon="@drawable/universityiconthree"
         android:supportsRtl="true"
         android:theme="@style/Theme.ComputerUniversity">
-        <activity android:name=".OnlineCourseReader"></activity>
+        <activity android:name=".ShopeOrder"></activity>
+        <activity android:name=".AllLists" />
+        <activity android:name=".CurrentCart" />
+        <activity android:name=".Shop_Detail_View" />
+        <activity android:name=".UCSMShop" />
+        <activity android:name=".OnlineCourseReader" />
         <activity android:name=".ViewingDetailsOfACourse" />
         <activity android:name=".courses_online" />
         <activity android:name=".SplashScreen" />
@@ -38,7 +42,9 @@
         <activity android:name=".WeekViewActivity" />
         <activity android:name=".todolist" />
         <activity android:name=".Mentor_Information" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,6 +59,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+
         <service
             android:name=".FirebaseMessagingService"
             android:permission="TODO"

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,10 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,14 +85,36 @@ public class DetailsCoursesFragment extends Fragment{
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        commonDynamicFragmentAdapter adapter= new commonDynamicFragmentAdapter(this);
-        viewPager2=view.findViewById(R.id.viewPager2);
-        viewPager2.setAdapter(adapter);
-        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
 
-        new TabLayoutMediator(tabLayout, viewPager2,
-                (tab, position) -> tab.setText("Week " + (position + 1))
-        ).attach();
+        Log.d("course",this +" is the this");
+        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
+        Fragment f=this;
+        LoadingDialog loadingDialog=new LoadingDialog(getActivity(),true,"Fetching course data");
+        loadingDialog.startAnimationDialog();
+        FirebaseDatabase.getInstance().getReference("CoursesData").child(courseID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //snapshot.getChildren();
+                int count=0;
+                for(DataSnapshot ds:snapshot.getChildren()){
+                    count++;
+                }
+                commonDynamicFragmentAdapter adapter= new commonDynamicFragmentAdapter(f,count);
+                viewPager2=view.findViewById(R.id.viewPager2);
+                viewPager2.setAdapter(adapter);
+                new TabLayoutMediator(tabLayout, viewPager2,
+                        (tab, position) -> tab.setText("Week " + (position + 1))
+                ).attach();
+                loadingDialog.closingAlertDialog();
+                Log.d("course","number of week in the course is "+count);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
 
@@ -95,9 +122,10 @@ public class DetailsCoursesFragment extends Fragment{
     public static class commonDynamicFragmentAdapter extends FragmentStateAdapter{
 
 
-
-        public commonDynamicFragmentAdapter(@NonNull Fragment fragment) {
+        int count=0;
+        public commonDynamicFragmentAdapter(@NonNull Fragment fragment,int count) {
           super(fragment);
+          this.count=count;
       }
 
       @NonNull
@@ -108,12 +136,13 @@ public class DetailsCoursesFragment extends Fragment{
           args.putInt(commonDynamicFragment.ARG_SECTION_NUMBER, position + 1);
           args.putString(commonDynamicFragment.ARG_COURSE_ID,courseID);
           fragment.setArguments(args);
+          Log.d("course",courseID+" is in details course fragment");
           return fragment;
       }
 
       @Override
       public int getItemCount() {
-          return 3;
+          return count;
       }
   }
 }

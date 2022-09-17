@@ -49,7 +49,6 @@
                         android:layout_alignParentRight="true"
                         app:border="true"
                         app:border_color="#EEEEEE"
-                        android:id="@+id/imageOFucsm"
                         app:shadow="true"
                         android:background="@color/tran"
                         android:src="@drawable/ucsmquitesmall">

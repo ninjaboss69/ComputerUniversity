@@ -31,6 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase db=getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("sentence",sentence);
+
             db.insert(nameOfTable,null,values);
         }
         catch (Exception e){
@@ -38,6 +39,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return true;
     }
+    public boolean insertAlarmData(String sentence,String id,String nameOfTable){
+        try{
+            SQLiteDatabase db=getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("id",id);
+            values.put("sentence",sentence);
+            db.insert(nameOfTable,null,values);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+    public boolean insertAddressData(String address,String phonenumber,String nameOfTable){
+        try{
+            SQLiteDatabase db=getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("phonenumber",phonenumber);
+            values.put("address",address);
+            db.insert(nameOfTable,null,values);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
 
 
     public Cursor getData(String sql){

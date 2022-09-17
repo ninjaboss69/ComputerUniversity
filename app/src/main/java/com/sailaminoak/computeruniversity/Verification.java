@@ -71,8 +71,9 @@ public class Verification extends AppCompatActivity {
                             registerData data=snapshot.getValue(registerData.class);
                             if(passwordString.contentEquals(data.getPassword())){
                                 displayToast("Verify Success, Please Reopen the App");
-
                                 String userName=data.getName();
+                                SharedPreferencesHolder holder=new SharedPreferencesHolder(getApplicationContext());
+                                holder.setStringToKey("mkpt",mkptString);
                                 try{
                                     SharedPreferences.Editor editor=sharedPreferences.edit();
                                     editor.putBoolean("auth",true);

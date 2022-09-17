@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".general">
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         xmlns:tools="http://schemas.android.com/tools"
@@ -18,8 +19,7 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/heading_label"
-                ></androidx.recyclerview.widget.RecyclerView>
+               />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -31,10 +31,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_centerInParent="true">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/brokenrobot"
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:lottie_rawRes="@raw/nofile"
                         android:id="@+id/image"
                         android:layout_gravity="center_horizontal"/>
                     <TextView

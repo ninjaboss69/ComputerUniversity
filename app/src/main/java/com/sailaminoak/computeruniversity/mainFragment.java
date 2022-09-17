@@ -42,6 +42,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -137,9 +138,10 @@ public class mainFragment extends Fragment {
         shopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FcmNotificationsSender notificationsSender=new FcmNotificationsSender("/topics/all","Fuck Me","Read 18+ news on the blah blah blah . Click to see more.",getContext(),
-                        getActivity());
-                notificationsSender.SendNotifications();
+                //FcmNotificationsSender notificationsSender=new FcmNotificationsSender("/topics/all","Fuck Me","Read 18+ news on the blah blah blah . Click to see more.",getContext(),
+                      //  getActivity());
+                //notificationsSender.SendNotifications();
+                startActivity(new Intent(getContext(),UCSMShop.class));
 
             }
         });
@@ -147,7 +149,8 @@ public class mainFragment extends Fragment {
         rateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FcmNotificationsSender notificationsSender=new FcmNotificationsSender("/topics/all","ABC","4SE contains please work",getContext(),
+                FcmNotificationsSender notificationsSender=new FcmNotificationsSender("/topics/all","English","Unit 3 \n 1.1 To Read \n 1.5 To Answer" +
+                        "1.5 to practice listening \n https://www.facebook.com/sailaminoak",getContext(),
                         getActivity());
                 notificationsSender.SendNotifications();
             }
@@ -251,6 +254,10 @@ public class mainFragment extends Fragment {
                     case R.id.nav_software:
                         drawerLayout.closeDrawer(Gravity.LEFT,false);
                         startActivity(new Intent(getContext(),AboutSoftware.class));
+                        break;
+                    case R.id.nav_rate:
+                        drawerLayout.closeDrawer(Gravity.LEFT,false);
+                        startActivity(new Intent(getContext(),UCSMShop.class));
                         break;
                     default:
                         if(sharedPreferences.getBoolean("auth",false)==true){
@@ -385,5 +392,13 @@ public class mainFragment extends Fragment {
                         //Use firebaseMessagingToken further
                     }
                 } );
+    }
+    String getRandomText(int length){
+        char[] ch="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLNMOPQRSTUVWXYZ".toCharArray();
+        StringBuilder sb=new StringBuilder();
+        for(int i=0;i<length;i++){
+            sb.append(ch[ThreadLocalRandom.current().nextInt(0,52)]);
+        }
+        return sb.toString();
     }
 }

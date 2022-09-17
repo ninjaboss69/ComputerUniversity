@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class canteenAdapter extends BaseAdapter {
 
     Context context;
-    private String[] gridViewData;
+    private final String[] gridViewData;
     boolean canteen=false;
     public canteenAdapter(Context context,String[] gridViewData,boolean canteen){
         this.context=context;

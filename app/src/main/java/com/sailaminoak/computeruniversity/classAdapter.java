@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class classAdapter extends BaseAdapter {
     ArrayList<String> classes;
-    private Context context;
+    private final Context context;
     private LayoutInflater layoutInflater;
     public classAdapter(Context context,ArrayList<String> classes){
         this.classes=classes;

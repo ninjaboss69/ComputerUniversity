@@ -129,7 +129,13 @@ public class Setting extends AppCompatActivity {
                         SharedPreferences.Editor editor=sharedPreferences.edit();
                         editor.putString("TodoLists","");
                         editor.apply();
-                        displayToast("cleared all lists");
+                        DatabaseHelper helper=new DatabaseHelper(getApplicationContext());
+                       if(helper.queryData("drop table AlarmData") && helper.queryData("drop table AssignmentData")){
+                           displayToast("cleared all lists");
+                       }else{
+                           displayToast("cannot drop database sorry");
+                       }
+
                         break;
                     default:
                         displayToast("something wrong");

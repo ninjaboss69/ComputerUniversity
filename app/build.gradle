@@ -21,6 +21,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationIdSuffix 'sailaminoak'
+            versionNameSuffix '1.2.3'
+            debuggable true
         }
     }
     compileOptions {
@@ -54,8 +57,7 @@ dependencies {
     implementation 'com.applandeo:material-calendar-view:1.7.0'
     implementation 'br.com.simplepass:loading-button-android:1.14.0'
     implementation 'com.airbnb.android:lottie:4.2.2'
-
-    //Glide
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 

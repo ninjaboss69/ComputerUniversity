@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    android:layout_marginRight="14dp"
+    app:cardCornerRadius="5dp"
+    app:strokeWidth="0.3dp"
+    app:strokeColor="@color/yellowBackground"
+    android:layout_marginBottom="18dp">s
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/shop_item_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ucsm_cup_example"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/shop_item_price"
+                android:text="700 Ks"
+                android:fontFamily="@font/roboto_condensed"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_width="45dp"
+            android:layout_height="16dp"
+            android:text="Out of Stock"
+            android:fontFamily="@font/custom_fonts"
+            android:textAlignment="center"
+            android:textSize="9sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:singleLine="true"
+            android:id="@+id/shop_extraText"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/off_percent_background"/>
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

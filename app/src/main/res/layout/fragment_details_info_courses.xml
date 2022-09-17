@@ -40,9 +40,7 @@
                    <ImageView
                        android:layout_width="50dp"
                        android:layout_height="50dp"
-                       android:src="@drawable/studentcolor"
-                       android:id="@+id/instructorImageView"
-                       />
+                       android:src="@drawable/studentcolor" />
                </androidx.cardview.widget.CardView>
                <TextView
                    android:layout_marginTop="10dp"
@@ -88,8 +86,7 @@
                    android:orientation="horizontal"
                    android:layout_below="@+id/startDateTitle"
                    android:layout_marginLeft="22dp"
-                   android:layout_marginTop="16dp"
-                   android:id="@+id/extraDataLinearLayout">
+                   android:layout_marginTop="16dp">
                    <ImageView
                        android:layout_width="30dp"
                        android:layout_height="30dp"

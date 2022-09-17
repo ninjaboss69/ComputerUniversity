@@ -20,7 +20,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import java.util.ArrayList;
 
 public class CourseReadAdapter extends RecyclerView.Adapter {
-    private ArrayList<CourseReadModel> dataSet;
+    private final ArrayList<CourseReadModel> dataSet;
     Context mContext;
     int total_types;
 
@@ -55,7 +55,7 @@ public class CourseReadAdapter extends RecyclerView.Adapter {
         if(model!=null){
             switch (model.type){
                 case CourseReadModel.TEXT_TYPE:
-                    ( (textViewReadingCourseViewHolder)holder).textView.setText(R.string.lorem);
+                    ( (textViewReadingCourseViewHolder)holder).textView.setText(model.text);
                     ( (textViewReadingCourseViewHolder)holder).textView.setLineSpacing(0,1.5f);
                     break;
                     case CourseReadModel.IMAGE_TYPE:

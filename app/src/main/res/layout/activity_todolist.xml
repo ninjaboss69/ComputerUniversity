@@ -8,6 +8,8 @@
 
     >
 
+
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,10 +22,10 @@
             android:orientation="vertical">
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/createfirstfile"
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_rawRes="@raw/nofile"
             android:id="@+id/image"
             android:layout_gravity="center_horizontal"/>
         <TextView
@@ -36,27 +38,49 @@
         </LinearLayout>
     </RelativeLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your to-do list"
+            android:id="@+id/headerTitle"
+            android:textSize="25sp"
+            android:fontFamily="@font/roboto_condensed"
+            android:textColor="@color/black_de"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your to-do list"
-        android:id="@+id/headerTitle"
-        android:textSize="25sp"
-        android:fontFamily="@font/roboto_condensed"
-        android:textColor="@color/black_de"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerTitle"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:stackFromEnd="true" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/headerTitle"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        app:stackFromEnd="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="From Cloud"
+            android:id="@+id/assignmentTitle"
+            android:textSize="25sp"
+            android:fontFamily="@font/roboto_condensed"
+            android:textColor="@color/black_de"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/recycler_view"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_Assignment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/assignmentTitle"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:stackFromEnd="true" />
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
@@ -69,4 +93,5 @@
         android:src="@drawable/ic_baseline_add_24"
         android:backgroundTint="@color/veryLightBlueColor"
         />
-</RelativeLayout>
+   </RelativeLayout>
+

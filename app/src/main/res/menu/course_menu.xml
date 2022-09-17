@@ -9,10 +9,7 @@
         android:id="@+id/menuUnEnroll"
         android:title="Un-Enroll"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/menuResetProgress"
-        android:title="Reset Progress"
-        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/menuRate"
         android:title="Rate Course"

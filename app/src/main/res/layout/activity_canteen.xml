@@ -49,9 +49,10 @@
             </LinearLayout>
             <ImageView
                 android:layout_weight=".2"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_register_hero"/>
+                android:layout_width="60dp"
+                android:layout_height="110dp"
+                android:src="@drawable/ic_cafeteria"
+                android:layout_marginRight="20dp"/>
 
         </LinearLayout>
 

@@ -49,10 +49,12 @@
                     />
             </LinearLayout>
             <ImageView
+                android:layout_marginTop="20dp"
                 android:layout_weight=".2"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_register_hero"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_people_team"
+                android:layout_marginRight="20dp"
                 android:backgroundTint="@color/colorRed_A400"/>
 
         </LinearLayout>

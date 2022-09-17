@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -71,6 +78,7 @@ public class generalOnlineCourses extends Fragment {
     RecyclerView recyclerView,onGoingRecyclerView;
     RelativeLayout allCoursesRelativeLayout,onGoingRelativeLayout;
     TextView viewAllCS,viewAllOngoing;
+    LinearLayout ongoing,cs;
     public int csVertical=0,onGoingVertical=0;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,22 +87,54 @@ public class generalOnlineCourses extends Fragment {
         View view= inflater.inflate(R.layout.fragment_general_online_courses, container, false);
         allCoursesRelativeLayout=view.findViewById(R.id.allCoursesRelativeLayout);
         onGoingRelativeLayout=view.findViewById(R.id.ongoingCoursesRelativeLayout);
+        ongoing=view.findViewById(R.id.onGoingCourseTittle);
+        cs=view.findViewById(R.id.firstTitleLinearLayout);
         recyclerView=view.findViewById(R.id.coursesRecyclerView);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
         viewAllCS=view.findViewById(R.id.viewAllCSCourse);
         viewAllOngoing=view.findViewById(R.id.viewAllOngoingCourse);
-        OnlineCoursesShowOffData model=new OnlineCoursesShowOffData("background image","Algorithm and Data Structure","Learn in Java","by Prof. Swe Swe Win","123","8 hours","13 chapter","4.8","1222","0");
+        SharedPreferencesHolder holder=new SharedPreferencesHolder(getContext());
+       // OnlineCoursesShowOffData model=new OnlineCoursesShowOffData("background image","Algorithm and Data Structure","Learn in Java","by Prof. Swe Swe Win","123","8 hours","13 chapter","4.8","1222","0");
         ArrayList<OnlineCoursesShowOffData> allCoursesmModels=new ArrayList<>();
-        allCoursesmModels.add(model);
-         allCoursesmModels.add(model);
-       allCoursesmModels.add(model);
-        CoursesAdapter adapter=new CoursesAdapter(getContext(),allCoursesmModels);
-        recyclerView.setAdapter(adapter);
-        if(allCoursesmModels.size()==0){
-            allCoursesRelativeLayout.setVisibility(View.GONE);
+//        allCoursesmModels.add(model);
+//        allCoursesmModels.add(model);
+//        allCoursesmModels.add(model);
+
+        HashSet<String> enrolledCourseKeys=new HashSet<>();
+        String[] courses=holder.unpackString(holder.getValueFromKey("enrollCourse"),"#");
+        for(String course:courses){
+            String[] eachCourse=course.split(":");
+            if(eachCourse.length!=3)continue;
+            enrolledCourseKeys.add(eachCourse[0]);
         }
+
+        FirebaseDatabase.getInstance().getReference("Courses").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds:snapshot.getChildren()){
+                    OnlineCoursesShowOffData showOff=  ds.getValue(OnlineCoursesShowOffData.class);
+                    if(enrolledCourseKeys.contains(showOff.getCourseID())){
+                        continue;
+                    }
+                    showOff.setCourseProgress("0");
+                    allCoursesmModels.add(showOff);
+
+                }
+                CoursesAdapter adapter=new CoursesAdapter(getContext(),allCoursesmModels);
+                recyclerView.setAdapter(adapter);
+                if(allCoursesmModels.size()==0){
+                    allCoursesRelativeLayout.setVisibility(View.GONE);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         onGoingRecyclerView=view.findViewById(R.id.ongoingCoursesRecylerView);
         LinearLayoutManager layoutManagerOngoing
@@ -150,20 +190,75 @@ public class generalOnlineCourses extends Fragment {
 
             }
         });
-        OnlineCoursesShowOffData onGoingModel=new OnlineCoursesShowOffData("background image","Algorithm and Data Structure","Learn in Java","by Prof. Swe Swe Win","123","8 hours","13 chapter","4.8","1222","6");
-        OnlineCoursesShowOffData onGoingModelO=new OnlineCoursesShowOffData("background image","Algorithm and Data Structure","Learn in Java","by Prof. Swe Swe Win","123","8 hours","13 chapter","4.8","1222","0");
-        OnlineCoursesShowOffData onGoingModel1=new OnlineCoursesShowOffData("background image","Algorithm and Data Structure","Learn in Java","by Prof. Swe Swe Win","123","8 hours","13 chapter","4.8","1222","3");
         ArrayList<OnlineCoursesShowOffData> onGoingModels=new ArrayList<>();
-        onGoingModels.add(onGoingModel);
-        onGoingModels.add(onGoingModel1);
-        onGoingModels.add(onGoingModelO);
-        CoursesAdapter onGoingAdapter=new CoursesAdapter(getContext(),onGoingModels);
-        onGoingRecyclerView.setAdapter(onGoingAdapter);
-        if(onGoingModels.size()==0){
-            onGoingRelativeLayout.setVisibility(View.GONE);
+       //get from local storage
+
+        String[] onGoingCoures=holder.unpackString(holder.getValueFromKey("enrollCourse"),"#");
+        String startDate="",courseID="",prorgress="1";
+        try{
+            if(!checkHasOngoing(onGoingCoures)){
+                if(onGoingModels.size()==0){
+                    onGoingRelativeLayout.setVisibility(View.GONE);
+                    // viewAllOngoing.setVisibility(View.GONE);
+                    ongoing.setVisibility(View.GONE);
+                }
+
+            }
+            for (int i=0;i< onGoingCoures.length;i++) {
+                String course=onGoingCoures[i];
+                String[] eachCourse = course.split(":");
+                if (eachCourse.length != 3) continue;
+                courseID = eachCourse[0];
+                prorgress = eachCourse[1];
+                startDate = eachCourse[2];
+              //  OnlineCoursesShowOffData model=new OnlineCoursesShowOffData();
+                String finalProrgress = prorgress;
+                int finalI = i;
+                FirebaseDatabase.getInstance().getReference("Courses").child(courseID).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        OnlineCoursesShowOffData showOff=  snapshot.getValue(OnlineCoursesShowOffData.class);
+                        //showOff.setCourseProgress("5");
+                        //progress should get from local storage
+                        //onGoingModels.add(showOff);
+                        showOff.setCourseProgress(finalProrgress);
+                        //showOff.set
+
+                        onGoingModels.add(showOff);
+                        if(finalI ==onGoingCoures.length-1){
+                            CoursesAdapter onGoingAdapter=new CoursesAdapter(getContext(),onGoingModels);
+                            onGoingRecyclerView.setAdapter(onGoingAdapter);
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+            }
+
+        }catch (Exception e){
+            //
+            Log.d("course","Lee error \n "+e);
         }
 
         return view;
+    }
+    boolean checkHasOngoing(String[] onGoingCoures){
+
+        for (int i=0;i< onGoingCoures.length;i++) {
+            String course = onGoingCoures[i];
+            String[] eachCourse = course.split(":");
+            if (eachCourse.length != 3) continue;
+           return true;
+        }
+        return false;
     }
     class coursesViewHolder extends RecyclerView.ViewHolder{
         View mView;
@@ -195,6 +290,7 @@ public class generalOnlineCourses extends Fragment {
         public CoursesAdapter(Context context, ArrayList<OnlineCoursesShowOffData> models) {
             this.context = context;
             this.models = models;
+
         }
 
         @NonNull
@@ -210,12 +306,35 @@ public class generalOnlineCourses extends Fragment {
             holder.mainTitle.setText(models.get(position).getMainTitle());
             holder.authorName.setText(models.get(position).getAuthorName());
             holder.approximateTime.setText(models.get(position).getApproximateTime());
-            holder.courseRating.setText(models.get(position).getCourseRating());
+            holder.courseRating.setText("");
+            FirebaseDatabase.getInstance().getReference("TotalRatings").child(models.get(position).getCourseID()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    RatingModel ratingModel=snapshot.getValue(RatingModel.class);
+                    if(ratingModel==null)return;
+
+                   try{
+                       float ans=Float.parseFloat(ratingModel.rating)/Float.parseFloat(ratingModel.usersCount);
+                       holder.courseRating.setText(String.valueOf(ans));
+                   }
+                    catch (Exception e){
+                       //nothing just user count ==0
+                        return;
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
             holder.studentAttendant.setText(models.get(position).getAttendantStudents());
             holder.imageViewofCourse.setImageResource(R.drawable.aggotalgo);
             if(!models.get(position).courseProgress.contentEquals("0")){
+                try{
 
-               try{
                    holder.onGoingProgressCardView.setVisibility(View.VISIBLE);
                    holder.extraDataCardView.setVisibility(View.GONE);
                    holder.onGoingProgress.setProgress(Integer.parseInt(models.get(position).getCourseProgress()));
@@ -234,6 +353,7 @@ public class generalOnlineCourses extends Fragment {
                     intent.putExtra("courseProgress",models.get(position).getCourseProgress());
                     intent.putExtra("courseShortDescription",models.get(position).getSubTitle());
                     startActivity(intent);
+                    getActivity().finish();
 
                 }
             });

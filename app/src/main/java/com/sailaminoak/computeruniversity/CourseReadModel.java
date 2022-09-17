@@ -6,10 +6,12 @@ public class CourseReadModel {
     public static final int VIDEO_TYPE=2;
 
     public int type;
-    public int data;
+    public String data;
     public String text;
+    public CourseReadModel(){
 
-    public CourseReadModel(int type, String text, int data)
+    }
+    public CourseReadModel(int type, String text, String data)
     {
         this.type=type;
         this.data=data;

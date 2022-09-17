@@ -16,7 +16,6 @@
     android:layout_marginRight="15dp"
     android:backgroundTint="@color/yellowBackground"
     android:layout_marginBottom="25dp"
-    android:id="@+id/cardOne"
 
     >
 

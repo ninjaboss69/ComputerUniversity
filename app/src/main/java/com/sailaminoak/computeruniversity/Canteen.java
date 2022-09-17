@@ -14,6 +14,7 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -36,6 +37,7 @@ public class Canteen extends AppCompatActivity {
     GridView gridView;
     ArrayList<CanteenData> canteenList=new ArrayList<>();
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,7 @@ public class Canteen extends AppCompatActivity {
                     onBackPressed();
                 }
             });
+
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -99,25 +102,25 @@ public class Canteen extends AppCompatActivity {
         });
     }
     private void displayCanteen(CanteenData canteenData){
-        BottomSheetDialog bottomSheetDialog=new BottomSheetDialog(this,R.style.BottomSheetDialogTheme);
+        BottomSheetDialog bottomSheetDialog=new BottomSheetDialog(this);
         View bottomSheetView= LayoutInflater.from(getApplicationContext()).inflate(R.layout.view_canteen_data,findViewById(R.id.bottomSheetContainer));
-        TextView phoneNumber=bottomSheetView.findViewById(R.id.canteenPhoneNumber);
+        Button phoneNumber=bottomSheetView.findViewById(R.id.canteenPhoneNumber);
         TextView availableItems=bottomSheetView.findViewById(R.id.availableItems);
         ImageView canteenImageView=bottomSheetView.findViewById(R.id.canteenImage);
-
+        TextView phoneNumNew=bottomSheetView.findViewById(R.id.phoneNumberTextViewNew);
             byte[] b = Base64.decode(canteenData.getCanteenImage(), Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
             canteenImageView.setImageBitmap(bitmap);
 
 
-        phoneNumber.setText(canteenData.getPhoneNumber());
+        phoneNumNew.setText(canteenData.getPhoneNumber());
         availableItems.setText(canteenData.getAvailableItems());
         TextView canteenName=bottomSheetView.findViewById(R.id.canteenName);
         canteenName.setText(canteenData.getCanteenName());
         phoneNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callNow(phoneNumber.getText().toString().trim());
+                callNow(phoneNumNew.getText().toString().trim());
             }
         });
         bottomSheetDialog.setContentView(bottomSheetView);

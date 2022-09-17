@@ -41,7 +41,7 @@ public class favoritePostsInformation extends AppCompatActivity {
         }
         relativeLayout=findViewById(R.id.backgroundForFavoritePosts);
         if(backgroundImage!=0){
-            relativeLayout.setVisibility(View.INVISIBLE);
+            relativeLayout.setVisibility(View.GONE);
         }
         ArrayAdapter arrayAdapter=new ArrayAdapter(this, android.R.layout.simple_list_item_activated_1,realNames);
         listView.setAdapter(arrayAdapter);

@@ -1,11 +1,13 @@
 package com.sailaminoak.computeruniversity;
 
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -17,23 +19,26 @@ import android.os.Vibrator;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.applandeo.materialcalendarview.utils.DateUtils;
 import com.google.firebase.messaging.RemoteMessage;
+
+import java.util.Calendar;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class FirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService {
 
-    NotificationManager mNotificationManager;
-String notiTag="";
-    private NotificationManagerCompat notificationManagerCompat;
+    String notiTag="";
+    NotificationManagerCompat not;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         notiTag=String.valueOf(System.currentTimeMillis());
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "Assignment_From_Cloud");
-      //  Intent resultIntent = new Intent(this, MainActivity.class);
-       // PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentTitle(remoteMessage.getNotification().getTitle());
         builder.setContentText(remoteMessage.getNotification().getBody());
        try{
@@ -48,34 +53,75 @@ String notiTag="";
            return;
 
        }
+        Log.d("abc","hello");
+       Calendar calendar=Calendar.getInstance();
+       calendar.add(Calendar.SECOND,30);
+      // calendar.add(Calendar.DAY_OF_MONTH,1);
+        String reminderTime=String.valueOf(calendar.getTimeInMillis());
+        Log.d("abc","getdata");
+        Log.d("abc",remoteMessage.getData()+"");
+        Log.d("abc",remoteMessage.getNotification().getTitle());
+        Log.d("abc",remoteMessage.getNotification().getBody());
+        //Log.d("abc",remoteMessage.getNotification());
+        sendOnChannelOne(getApplicationContext(),remoteMessage.getNotification().getTitle(),remoteMessage.getNotification().getBody(),reminderTime);
 
-        builder.setStyle(new NotificationCompat.BigTextStyle().bigText(remoteMessage.getNotification().getBody()));
-        builder.setAutoCancel(true);
-        builder.setPriority(Notification.PRIORITY_HIGH);
-        Intent addToListIntent=new Intent(this,NotificationReceiver.class);
-        addToListIntent.putExtra("rawString",notiTag);
-        PendingIntent pendingIntent=PendingIntent.getBroadcast(this,1,addToListIntent,PendingIntent.FLAG_UPDATE_CURRENT);
-        mNotificationManager =
-                (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
-        builder.setSmallIcon(R.drawable.assignment);
-        builder.addAction(R.drawable.assignment,"Add To Lists",pendingIntent);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-        {
-            String channelId = "Assignment_From_Cloud";
-            NotificationChannel channel = new NotificationChannel(
-                    channelId,
-                    "Assignment_From_Cloud",
-                    NotificationManager.IMPORTANCE_HIGH);
-            mNotificationManager.createNotificationChannel(channel);
-            builder.setChannelId(channelId);
-        }
-        //mNotificationManager.notify(100, builder.build());
-        mNotificationManager.notify(notiTag, 0,builder.build());
 
 
     }
+    private void sendOnChannelOne(Context context,String title,String description,String reminderTime) {
+        String tageOfNoti=reminderTime;
+        int tageOfNotiInt=(int)System.currentTimeMillis()/100;
+        Intent addToListIntent=new Intent(this,NotificationReceiver.class);
+        addToListIntent.putExtra("rawString",tageOfNoti);
+        addToListIntent.putExtra("data",title+"#"+description+"#"+reminderTime);
+        addToListIntent.putExtra("id",tageOfNotiInt);
+        addToListIntent.putExtra("title",title);
+        addToListIntent.putExtra("description",description);
+        PendingIntent pendingIntent=PendingIntent.getBroadcast(this,(int)System.currentTimeMillis()/100,addToListIntent,PendingIntent.FLAG_UPDATE_CURRENT);
 
+        Notification notification=new NotificationCompat.Builder(context,App.Channel1_ID)
+                .setSmallIcon(R.drawable.ic_baseline_notifications_active_24)
+                .setContentTitle(title)
+                .setContentText(description)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory("Channel One")
+                .addAction(R.drawable.assignment,"Remind Me",pendingIntent)
+                .setAutoCancel(false)
+                .setOnlyAlertOnce(true)
+                .setColor(Color.BLUE)
+                .setStyle(new NotificationCompat.BigTextStyle().setBigContentTitle(title))
+                .build();
+        not=NotificationManagerCompat.from(context);
+        not.notify(tageOfNoti, tageOfNotiInt,notification);
+
+    }
+AlarmManager alarmManager;
+    void createAnAlarm(Calendar calendar, int alarmRequestCode){
+        try{
+            alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+            Intent alarmActivity=new Intent(this,NotificationReceiver.class);
+            alarmActivity.putExtra("title","Assignment");
+            alarmActivity.putExtra("description","custom time description");
+            PendingIntent pendingIntent=PendingIntent.getBroadcast(this,alarmRequestCode,alarmActivity,PendingIntent.FLAG_UPDATE_CURRENT);
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
+
+
+
+        }catch (Exception e){
+            Toast.makeText(this,"Cannot Set Alarm",Toast.LENGTH_SHORT).show();
+        }
+    }
+String wordGenerator(int customLength){
+        StringBuilder sb=new StringBuilder();
+        String words="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        int maxLength=words.length();
+        for(int i=0;i<customLength;i++){
+            int randomNum = ThreadLocalRandom.current().nextInt(0, maxLength);
+            sb.append(words.charAt(randomNum));
+        }
+       return sb.toString();
+}
 
 
 }

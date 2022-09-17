@@ -18,7 +18,9 @@ public class APost {
     public void setVideoContainsOrNot(String videoContainsOrNot) {
         this.videoContainsOrNot = videoContainsOrNot;
     }
+    APost(){
 
+    }
     public String getPostID() {
         return postID;
     }

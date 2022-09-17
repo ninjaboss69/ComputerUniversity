@@ -1,5 +1,6 @@
 package com.sailaminoak.computeruniversity;
 
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -15,9 +16,11 @@ import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import java.util.Calendar;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class NotificationReceiver extends BroadcastReceiver {
+
     private NotificationManagerCompat notificationManagerCompat;
     SharedPreferences sharedPreferences;
     @Override
@@ -26,6 +29,18 @@ public class NotificationReceiver extends BroadcastReceiver {
         Log.d("abc","started");
         String rawString=intent.getStringExtra("rawString");
             if(rawString!=null) {
+                //Log.d("abc","do nothing");
+                int uniqueId=intent.getIntExtra("id",1);
+                Log.d("abc","unique id "+uniqueId);
+                String data=intent.getStringExtra("data");
+                Log.d("abc",data +" is  the data");
+                T(context,rawString,uniqueId,data);
+                Calendar calendar=Calendar.getInstance();
+                long timeStamp=Long.parseLong(rawString);
+                calendar.setTimeInMillis(timeStamp);
+                createAnAlarm(context,calendar,10001,intent.getStringExtra("title"),intent.getStringExtra("description"));
+                Log.d("abc","receiving on rawString not null");
+               /*
                 sharedPreferences=context.getSharedPreferences("Main",Context.MODE_PRIVATE);
                 String subString=sharedPreferences.getString("TodoLists","");
                 subString=subString+","+("101"+"#"+ "Mixing with Ingredients" +"#"+R.color.colorRed_900+"#"+"Tue"+"#"+"15"+"#"+"Jan"+"#"+"789");
@@ -35,7 +50,11 @@ public class NotificationReceiver extends BroadcastReceiver {
                 notificationManagerCompat=NotificationManagerCompat.from(context);
                 notificationManagerCompat.cancel(rawString,0);
                 Log.d("abc","successfully put "+rawString+" to lists");
+                Log.d("abc",rawString);
+
+                */
             }else{
+                Log.d("abc","receiving on rawString null");
                 String title=intent.getStringExtra("title");
                 String description=intent.getStringExtra("description");
                 notificationManagerCompat=NotificationManagerCompat.from(context);
@@ -48,10 +67,10 @@ public class NotificationReceiver extends BroadcastReceiver {
     private void sendOnChannelOne(Context context,String title,String description) {
         Intent activityIntent=new Intent(context,todolist.class);
         PendingIntent pendingIntent=PendingIntent.getActivity(context,0,activityIntent,PendingIntent.FLAG_UPDATE_CURRENT);
-        Bitmap bitmap= BitmapFactory.decodeResource(context.getResources(),R.drawable.assignment);
+        //Bitmap bitmap= BitmapFactory.decodeResource(context.getResources(),R.drawable.assignment);
         Notification notification=new NotificationCompat.Builder(context,App.Channel1_ID)
                 .setSmallIcon(R.drawable.ic_baseline_notifications_active_24)
-                .setContentTitle("It is Time!")
+                .setContentTitle("Reminder")
                 .setContentText(description)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory("Channel One")
@@ -59,11 +78,46 @@ public class NotificationReceiver extends BroadcastReceiver {
                 .setAutoCancel(true)
                 .setOnlyAlertOnce(true)
                 .setColor(Color.BLUE)
-                .setLargeIcon(bitmap)
                 .setStyle(new NotificationCompat.BigTextStyle().setBigContentTitle(title))
                 .build();
         notificationManagerCompat.notify(String.valueOf(System.currentTimeMillis()), 0,notification);
 
+    }
+    void T(Context context,String tagofNoti,int uniqueId,String data){
+
+        /*sharedPreferences=context.getSharedPreferences("Main",Context.MODE_PRIVATE);
+        String subString=sharedPreferences.getString("TodoLists","");
+        subString=subString+","+("101"+"#"+ "Mixing with Ingredients" +"#"+R.color.colorRed_900+"#"+"Tue"+"#"+"15"+"#"+"Jan"+"#"+"789");
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.putString("TodoLists",subString);
+        editor.apply();
+
+         */
+        DatabaseHelper helper=new DatabaseHelper(context);
+        helper.queryData("CREATE TABLE if not exists AssignmentData( sentence TEXT )");
+        helper.insertData(data,"AssignmentData");
+        //notificationManagerCompat=NotificationManagerCompat.from(context);
+        //notificationManagerCompat.cancel(rawString,0);
+        Log.d("abc","successfully put  to lists");
+        NotificationManagerCompat notificationManagerCompat=NotificationManagerCompat.from(context);
+        notificationManagerCompat.cancel(tagofNoti,uniqueId);
+
+    }
+    AlarmManager alarmManager;
+    void createAnAlarm(Context context,Calendar calendar, int alarmRequestCode,String title,String description){
+        try{
+            alarmManager = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
+            Intent alarmActivity=new Intent(context,NotificationReceiver.class);
+            alarmActivity.putExtra("title",title);
+            alarmActivity.putExtra("description",description);
+            PendingIntent pendingIntent=PendingIntent.getBroadcast(context,alarmRequestCode,alarmActivity,PendingIntent.FLAG_UPDATE_CURRENT);
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
+
+
+
+        }catch (Exception e){
+            Toast.makeText(context,"Cannot Set Alarm",Toast.LENGTH_SHORT).show();
+        }
     }
 
 

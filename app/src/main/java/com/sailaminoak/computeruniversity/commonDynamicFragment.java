@@ -11,12 +11,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -41,36 +47,53 @@ public class commonDynamicFragment extends Fragment{
         return view;
 
     }
+    String courseIDToPass="";
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         Bundle args = getArguments();
         int weekNumber=args.getInt(ARG_SECTION_NUMBER);
+        Log.d("course",args.getString(ARG_COURSE_ID)+" is the id in common dynamic fragment");
+        courseIDToPass=args.getString(ARG_COURSE_ID)+"";
         ArrayList<APost> models=new ArrayList<>();
+        FirebaseDatabase.getInstance().getReference("CoursesData").child(courseIDToPass).child("Week "+weekNumber).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds:snapshot.getChildren()){
+                    APost aPost=ds.getValue(APost.class);
+                    models.add(aPost);
+                }
+                classPostAdapter adapter=new classPostAdapter(models,getContext());
+                recyclerView.setAdapter(adapter);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-        APost aPost=new APost("Introduction","NO","889","1hour");
-        APost aPost1=new APost("Introduction","NO","889","1hour");
-        APost aPost2=new APost("Introduction","YES","889","1hour");
-        if(weekNumber==2){
-            APost aPost4=new APost("Introduction","YES","889","1hour");
-            APost aPost3=new APost("Introduction","YES","889","1hour");
-            APost aPost5=new APost("Introduction","YES","889","1hour");
-            APost aPost6=new APost("Introduction","YES","889","1hour");
-            APost aPost7=new APost("Introduction","YES","889","1hour");
-            APost aPost8=new APost("Introduction","YES","889","1hour");
-            models.add(aPost4);
-            models.add(aPost3);
-            models.add(aPost5);
-            models.add(aPost6);
-            models.add(aPost7);
-            models.add(aPost8);
-        }
-        models.add(aPost);
-        models.add(aPost1);
-        models.add(aPost2);
-        classPostAdapter adapter=new classPostAdapter(models,getContext());
-        recyclerView.setAdapter(adapter);
+            }
+        });
+
+//        APost aPost=new APost("Introduction","NO","889","1hour");
+//        APost aPost1=new APost("Introduction","NO","889","1hour");
+//        APost aPost2=new APost("Introduction","YES","889","1hour");
+//        if(weekNumber==2){
+//            APost aPost4=new APost("Introduction","YES","889","1hour");
+//            APost aPost3=new APost("Introduction","YES","889","1hour");
+//            APost aPost5=new APost("Introduction","YES","889","1hour");
+//            APost aPost6=new APost("Introduction","YES","889","1hour");
+//            APost aPost7=new APost("Introduction","YES","889","1hour");
+//            APost aPost8=new APost("Introduction","YES","889","1hour");
+//            models.add(aPost4);
+//            models.add(aPost3);
+//            models.add(aPost5);
+//            models.add(aPost6);
+//            models.add(aPost7);
+//            models.add(aPost8);
+//        }
+//        models.add(aPost);
+//        models.add(aPost1);
+//        models.add(aPost2);
+
 
     }
     class classPostViewHolder extends RecyclerView.ViewHolder{
@@ -115,7 +138,11 @@ public class commonDynamicFragment extends Fragment{
            holder.cardView.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   startActivity(new Intent(getContext(),OnlineCourseReader.class));
+                   Intent intent=new Intent(getContext(),OnlineCourseReader.class);
+
+                   intent.putExtra("courseId",courseIDToPass);
+                   intent.putExtra("postID",models.get(position).postID);
+                   startActivity(intent);
                }
            });
         }

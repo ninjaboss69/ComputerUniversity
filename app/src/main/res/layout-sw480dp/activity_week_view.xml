@@ -176,7 +176,6 @@
                                         android:orientation="vertical">
 
                                         <ImageButton
-                                            android:id="@+id/imageViewForDone1"
                                             android:layout_width="50dp"
                                             android:layout_height="wrap_content"
                                             android:background="@color/tran"
@@ -265,7 +264,6 @@
                                         android:orientation="vertical">
 
                                         <ImageButton
-                                            android:id="@+id/imageViewForDone2"
                                             android:layout_width="50dp"
                                             android:layout_height="wrap_content"
                                             android:background="@color/tran"
@@ -354,7 +352,6 @@
                                         android:orientation="vertical">
 
                                         <ImageButton
-                                            android:id="@+id/imageViewForDone3"
                                             android:layout_width="50dp"
                                             android:layout_height="wrap_content"
                                             android:background="@color/tran"
@@ -443,7 +440,6 @@
                                         android:orientation="vertical">
 
                                         <ImageButton
-                                            android:id="@+id/imageViewForDone4"
                                             android:layout_width="50dp"
                                             android:layout_height="wrap_content"
                                             android:background="@color/tran"
@@ -532,7 +528,6 @@
                                         android:orientation="vertical">
 
                                         <ImageButton
-                                            android:id="@+id/imageViewForDone5"
                                             android:layout_width="50dp"
                                             android:layout_height="wrap_content"
                                             android:background="@color/tran"
@@ -622,7 +617,6 @@
                                         <ImageButton
                                             android:layout_width="50dp"
                                             android:layout_height="50dp"
-                                            android:id="@+id/imageViewForDone6"
                                             android:src="@drawable/panding"
                                             android:background="@color/tran"
                                             />

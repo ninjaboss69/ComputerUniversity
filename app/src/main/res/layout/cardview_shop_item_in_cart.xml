@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_weight="1"
+    android:id="@+id/wholeLinear"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="horizontal">
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.3"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="5dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ucsm_cup_example"
+                android:scaleType="fitCenter"
+                android:id="@+id/itemImageView"/>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:text="UCSM Cup"
+           android:textStyle="bold"
+            android:id="@+id/itemNameTextView"
+            android:fontFamily="@font/custom_fonts"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:text="size : medium"
+            android:textSize="8sp"
+         android:id="@+id/itemSize"
+            android:textStyle="bold"/>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            app:strokeColor="@color/grey_font"
+            app:strokeWidth="0.3dp"
+            app:cardCornerRadius="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center">
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_height="wrap_content"
+                    android:background="@color/tran"
+                    android:id="@+id/itemCountUp"
+                    android:src="@drawable/ic_noun_plus_4706210"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="1"
+                    android:id="@+id/itemCountTextView"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_height="wrap_content"
+                    android:background="@color/tran"
+                    android:id="@+id/itemCountDown"
+                    android:src="@drawable/ic_noun_minus_2774739"/>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="0.2"
+    android:weightSum="1"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="$13.99"
+        android:layout_weight="0.5"
+        android:fontFamily="@font/roboto_condensed"
+        android:paddingTop="15dp"
+        android:textAlignment="center"
+        android:id="@+id/itemTotalPrice"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.5"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:id="@+id/deleteLinearLayout"
+    >
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_delete_24"
+        android:background="@color/tran"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:textSize="8sp"
+        android:paddingLeft="5dp"/>
+
+</LinearLayout>
+
+</LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/grey_font"/>
+</LinearLayout>

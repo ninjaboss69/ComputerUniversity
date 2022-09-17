@@ -115,7 +115,6 @@ public class general extends Fragment {
             protected void onBindViewHolder(@NonNull Student_Information.StudentsViewHolder holder,
                                             int position,
                                             @NonNull Students model) {
-                setScaleAnimation(holder.itemView);
                 holder.setDetails(getContext(),model.name,model.getBatch(),model.image);
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -199,11 +198,7 @@ public class general extends Fragment {
             }
         });
     }
-    private final static int FADE_DURATION = 1000;
-    private void setScaleAnimation(View view) {
-        ScaleAnimation anim = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        anim.setDuration(FADE_DURATION);
-        view.startAnimation(anim);
-    }
+
+
 
 }

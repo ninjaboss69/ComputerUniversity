@@ -113,7 +113,6 @@ public class others extends Fragment {
             protected void onBindViewHolder(@NonNull others.OthersViewHolder holder,
                                             int position,
                                             @NonNull Team model) {
-                setScaleAnimation(holder.itemView);
                 holder.setDetails(getContext(),model.teamName,model.getAwardName());
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -204,11 +203,5 @@ public class others extends Fragment {
             }
         });
 
-    }
-    private final static int FADE_DURATION = 1000;
-    private void setScaleAnimation(View view) {
-        ScaleAnimation anim = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        anim.setDuration(FADE_DURATION);
-        view.startAnimation(anim);
     }
 }
